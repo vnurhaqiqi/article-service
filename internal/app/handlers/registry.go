@@ -20,6 +20,8 @@ func ProvideHandlerRegistry(service *services.ServiceRegistry) *HandlerRegistry 
 }
 
 func (h *HandlerRegistry) RegisterRoutes(e *echo.Group) {
+	h.CustomerHandler.RegisterRoutes(e)
+
 	e.GET("/health", func(c echo.Context) error {
 		return c.JSON(http.StatusOK, map[string]interface{}{
 			"status": "ok",
