@@ -19,6 +19,14 @@ func WithJSON(code int, payload interface{}, c echo.Context) error {
 	})
 }
 
+func WithMessage(code int, message string, c echo.Context) error {
+	return c.JSON(code, Base{
+		Message: &message,
+		Error:   nil,
+		Data:    nil,
+	})
+}
+
 func WithJSONError(err error, c echo.Context) error {
 	code := failure.GetCode(err)
 	message := err.Error()
