@@ -3,11 +3,11 @@ package services
 import "github.com/vnurhaqiqi/go-echo-starter/internal/app/repositories"
 
 type ServiceRegistry struct {
-	CustomerService CustomerService
+	ArticleService ArticleService
 }
 
 func ProvideServiceRegistry(repo *repositories.RepositoryRegistry) *ServiceRegistry {
 	return &ServiceRegistry{
-		CustomerService: ProvideCustomerServiceImpl(repo.CustomerRepository),
+		ArticleService: ProvideArticleServiceImpl(repo.ArticleRepository, repo.AuthorRepository),
 	}
 }

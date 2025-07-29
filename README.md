@@ -31,8 +31,8 @@ go-echo-starter/
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/vnurhaqiqi/go-echo-starter.git
-cd go-echo-starter
+git clone https://github.com/vnurhaqiqi/article-service.git
+cd article-service
 ```
 
 2. Install dependencies:
@@ -60,32 +60,6 @@ make swagger
 ## API Documentation
 
 Access the Swagger UI at: `http://localhost:8080/swagger`
-
-### Available Endpoints
-
-#### Customers API
-
-- **GET /customers**
-  - Get all customers
-  - Response: `[]CustomerResponse`
-
-- **GET /customers/{id}**
-  - Get customer by ID
-  - Parameters:
-    - `id`: Customer ID (UUID)
-  - Response: `CustomerResponse`
-
-- **POST /customers**
-  - Create new customer
-  - Request body: `CustomerRequest`
-  - Response: `CustomerResponse`
-
-- **PUT /customers/{id}**
-  - Update customer
-  - Parameters:
-    - `id`: Customer ID (UUID)
-  - Request body: `CustomerRequest`
-  - Response: `CustomerResponse`
 
 
 ## Project Details

@@ -8,19 +8,19 @@ import (
 )
 
 type HandlerRegistry struct {
-	CustomerHandler *CustomerHandler
+	ArticleHandler *ArticleHandler
 }
 
 func ProvideHandlerRegistry(service *services.ServiceRegistry) *HandlerRegistry {
-	customerHandler := ProvideCustomerHandler(service.CustomerService)
+	articleHandler := ProvideArticleHandler(service.ArticleService)
 
 	return &HandlerRegistry{
-		CustomerHandler: customerHandler,
+		ArticleHandler: articleHandler,
 	}
 }
 
 func (h *HandlerRegistry) RegisterRoutes(e *echo.Group) {
-	h.CustomerHandler.RegisterRoutes(e)
+	h.ArticleHandler.RegisterRoutes(e)
 
 	e.GET("/health", func(c echo.Context) error {
 		return c.JSON(http.StatusOK, map[string]interface{}{
