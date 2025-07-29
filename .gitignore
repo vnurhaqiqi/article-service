@@ -33,3 +33,5 @@ go.work.sum
 
 # Ignore automatically generated Swagger docs
 /docs*
+
+.vscode
